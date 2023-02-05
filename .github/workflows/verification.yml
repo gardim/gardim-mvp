@@ -1,0 +1,34 @@
+name: Verification
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  verification:
+    if: ${{ github.event.label.name != 'dependencies' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ❇️ Setup Nodejs
+        uses: actions/setup-node@v3.5.1
+
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: yarn
+
+      - name: 💅🏽 Analysing code linter
+        run: |
+          npm run eslint
+          npm run prettier
