@@ -18,7 +18,10 @@
     "react-native-web": "~0.18.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@cypress/code-coverage": "^3.10.0",
+    "babel-plugin-istanbul": "^6.1.1",
+    "cypress": "^12.5.1"
   },
   "private": true
 }
