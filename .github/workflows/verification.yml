@@ -30,5 +30,18 @@ jobs:
 
       - name: 💅🏽 Analysing code linter
         run: |
-          npm run eslint
-          npm run prettier
+          yarn eslint
+          yarn prettier
+
+      - name: 🧪 Run Cypress Test
+        uses: cypress-io/github-action@v5.0.0
+        with:
+          start: yarn web
+          browser: chrome
+
+      - name: 🔍 SonarCloud Scan
+        continue-on-error: true
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
