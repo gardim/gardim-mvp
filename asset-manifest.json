@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/gardim-mvp/static/js/app.a1454358.chunk.js",
-    "app.js.map": "/gardim-mvp/static/js/app.a1454358.chunk.js.map",
+    "app.js": "/gardim-mvp/static/js/app.9b64b544.chunk.js",
+    "app.js.map": "/gardim-mvp/static/js/app.9b64b544.chunk.js.map",
     "runtime~app.js": "/gardim-mvp/static/js/runtime~app.67ebc846.js",
     "runtime~app.js.map": "/gardim-mvp/static/js/runtime~app.67ebc846.js.map",
     "static/js/2.d99acf2d.chunk.js": "/gardim-mvp/static/js/2.d99acf2d.chunk.js",
@@ -17,6 +17,6 @@
   "entrypoints": [
     "static/js/runtime~app.67ebc846.js",
     "static/js/2.d99acf2d.chunk.js",
-    "static/js/app.a1454358.chunk.js"
+    "static/js/app.9b64b544.chunk.js"
   ]
 }
