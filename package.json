@@ -1,7 +1,7 @@
 {
   "name": "gardim-mvp",
   "version": "1.0.0",
-  "main": "./src/App.js",
+  "main": "./src/App.tsx",
   "homepage": "http://gardim/gardim-mvp",
   "scripts": {
     "start": "expo start",
