@@ -1,28 +1,14 @@
 import * as React from 'react';
-import { View, StyleSheet, I18nManager, ScrollView, ScrollViewProps } from 'react-native';
-import {
-  Badge,
-  Drawer,
-  Switch,
-  Text,
-  TouchableRipple,
-  MD2Colors,
-  useTheme,
-  MD3Colors,
-} from 'react-native-paper';
+import { View, StyleSheet } from 'react-native';
+import { Drawer, Switch, Text, TouchableRipple } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { PreferencesContext } from './navigation/PreferencesContext';
 
 export default function DrawerContent() {
   const insets = useSafeAreaInsets();
-  const drawerPosition = React.useContext(
-    React.createContext<'left' | 'right' | undefined>(undefined)
-  );
 
-  const isRight = I18nManager.getConstants().isRTL
-    ? drawerPosition === 'left'
-    : drawerPosition === 'right';
-
-  const [menuVisible, setMenuVisible] = React.useState(false);
+  const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
 
   return (
     <Drawer.Section title="Preferences" style={{ flex: 1, paddingTop: insets.top + 4 }}>
@@ -34,11 +20,11 @@ export default function DrawerContent() {
       />
       <Drawer.Item icon="star" label="First Item" />
       <Drawer.Item icon="star" label="First Item" />
-      <TouchableRipple onPress={() => setMenuVisible(!menuVisible)}>
+      <TouchableRipple onPress={toggleTheme}>
         <View style={[styles.preference]}>
           <Text variant="labelLarge">Dark Theme</Text>
           <View pointerEvents="none">
-            <Switch value={menuVisible} />
+            <Switch value={isThemeDark} />
           </View>
         </View>
       </TouchableRipple>
