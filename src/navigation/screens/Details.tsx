@@ -11,6 +11,13 @@ const SettingRoute = () => <Text>Recents</Text>;
 
 const LogoutRoute = () => <Text>logout</Text>;
 
+const renderScene = BottomNavigation.SceneMap({
+  music: StateRoute,
+  albums: ClientRoute,
+  recents: SettingRoute,
+  notifications: LogoutRoute,
+});
+
 export default function Details({ navigation }) {
   const [index, setIndex] = React.useState(0);
   const insets = useSafeAreaInsets();
@@ -25,13 +32,6 @@ export default function Details({ navigation }) {
       unfocusedIcon: 'bell-outline',
     },
   ]);
-
-  const renderScene = BottomNavigation.SceneMap({
-    music: StateRoute,
-    albums: ClientRoute,
-    recents: SettingRoute,
-    notifications: LogoutRoute,
-  });
   return (
     <BottomNavigation
       safeAreaInsets={{ bottom: insets.bottom }}

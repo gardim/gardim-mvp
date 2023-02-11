@@ -9,7 +9,7 @@ export default function Home({ navigation }) {
         <View style={styles.fabVariant}>
           <FAB
             icon="plus"
-            onPress={() => navigation.navigate('Carousel')}
+            onPress={() => navigation.navigate('Configuration')}
             visible
             style={[styles.fabStyle]}
           />

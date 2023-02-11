@@ -14,6 +14,7 @@ import {
   Provider as PaperProvider,
 } from 'react-native-paper';
 
+import DrawerContent from './DrawerContent';
 import RootStackNavigator from './Root';
 import { PreferencesContext } from './navigation/PreferencesContext';
 
@@ -56,7 +57,8 @@ function App() {
               screenOptions={{
                 headerShown: false,
                 drawerPosition: 'right',
-              }}>
+              }}
+              drawerContent={() => <DrawerContent />}>
               <Drawer.Screen name="Root" component={RootStackNavigator} />
             </Drawer.Navigator>
           </NavigationContainer>
