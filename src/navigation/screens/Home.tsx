@@ -6,15 +6,13 @@ export default function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.row}>
-        <View style={styles.fabVariant}>
-          <FAB
-            icon="plus"
-            onPress={() => navigation.navigate('Configuration')}
-            visible
-            style={[styles.fabStyle]}
-          />
-          <Text variant="bodyLarge">Adicione sua primeira planta</Text>
-        </View>
+        <FAB
+          icon="plus"
+          onPress={() => navigation.navigate('Identifique sua planta')}
+          visible
+          style={[styles.fabStyle]}
+        />
+        <Text variant="titleSmall">Adicione sua primeira planta</Text>
       </View>
     </SafeAreaView>
   );
@@ -23,21 +21,18 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    padding: 4,
+    padding: 8,
     justifyContent: 'center',
-  },
-  fabStyle: {
-    margin: 0,
   },
   row: {
+    flex: 0.5,
     marginBottom: 8,
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 10,
   },
-  fabVariant: {
-    flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'center',
+  fabStyle: {
+    margin: 20,
   },
 });
