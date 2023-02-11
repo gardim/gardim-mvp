@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { Drawer, Switch, Text, TouchableRipple } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { PreferencesContext } from './navigation/PreferencesContext';
+import { PreferencesContext } from '../configuration/PreferencesContext';
 
 export default function DrawerContent() {
   const insets = useSafeAreaInsets();

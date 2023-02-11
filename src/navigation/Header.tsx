@@ -10,7 +10,7 @@ export type RootStackParamList = {
 
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
-export const Header = ({ navigation, back }: StackHeaderProps) => {
+export const Header = ({ navigation, back, route }: StackHeaderProps) => {
   const theme = useTheme();
   const [menuVisible, setMenuVisible] = React.useState(false);
 
@@ -22,7 +22,7 @@ export const Header = ({ navigation, back }: StackHeaderProps) => {
         },
       }}>
       {back ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
-      <Appbar.Content title="bucetinha" />
+      <Appbar.Content title={route.name} />
       <Menu
         visible={menuVisible}
         onDismiss={() => setMenuVisible(false)}

@@ -1,6 +1,6 @@
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import 'react-native-gesture-handler';
+
 import {
-  NavigationContainer,
   DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,
 } from '@react-navigation/native';
@@ -14,11 +14,8 @@ import {
   Provider as PaperProvider,
 } from 'react-native-paper';
 
-import DrawerContent from './DrawerContent';
-import RootStackNavigator from './Root';
-import { PreferencesContext } from './navigation/PreferencesContext';
-
-import 'react-native-gesture-handler';
+import { PreferencesContext } from './configuration/PreferencesContext';
+import RootNavigation from './navigation/RootNavigation';
 
 const { LightTheme, DarkTheme } = adaptNavigationTheme({
   reactNavigationLight: NavigationDefaultTheme,
@@ -45,23 +42,11 @@ function App() {
     [toggleTheme, isThemeDark]
   );
 
-  const Drawer = createDrawerNavigator();
-
   return (
     <PaperProvider theme={theme}>
       <PreferencesContext.Provider value={preferences}>
         <>
-          <NavigationContainer theme={theme}>
-            <Drawer.Navigator
-              initialRouteName="In"
-              screenOptions={{
-                headerShown: false,
-                drawerPosition: 'right',
-              }}
-              drawerContent={() => <DrawerContent />}>
-              <Drawer.Screen name="Root" component={RootStackNavigator} />
-            </Drawer.Navigator>
-          </NavigationContainer>
+          <RootNavigation theme={theme} />
         </>
       </PreferencesContext.Provider>
     </PaperProvider>
