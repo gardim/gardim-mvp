@@ -16,7 +16,7 @@ export default function RootNavigation({ theme }) {
           headerShown: false,
           drawerPosition: 'right',
         }}
-        drawerContent={() => <DrawerContent />}>
+        drawerContent={({ navigation }) => <DrawerContent navigation={navigation} />}>
         <Drawer.Screen name="Root" component={RootStackNavigator} />
       </Drawer.Navigator>
     </NavigationContainer>

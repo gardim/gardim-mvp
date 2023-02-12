@@ -13,7 +13,7 @@ export default function IdentificationMethod({ navigation }) {
         <FAB
           icon="camera"
           label="Identificar por imagem"
-          onPress={() => navigation.navigate('Configuration')}
+          onPress={() => navigation.navigate('Adicione Imagens')}
           size="medium"
           visible
         />
@@ -21,7 +21,7 @@ export default function IdentificationMethod({ navigation }) {
         <FAB
           icon="clipboard-edit-outline"
           label="Inserir manualmente"
-          onPress={() => navigation.navigate('Configuration')}
+          onPress={() => navigation.navigate('Identificação Manual')}
           visible
           size="medium"
         />
@@ -32,8 +32,8 @@ export default function IdentificationMethod({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    padding: 8,
+    flexGrow: 0.9,
+    paddingHorizontal: 8,
     justifyContent: 'center',
   },
   row: {

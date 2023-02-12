@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { PreferencesContext } from '../configuration/PreferencesContext';
 
-export default function DrawerContent() {
+export default function DrawerContent({ navigation }) {
   const insets = useSafeAreaInsets();
 
   const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
@@ -14,12 +14,10 @@ export default function DrawerContent() {
     <Drawer.Section title="Preferences" style={{ flex: 1, paddingTop: insets.top + 4 }}>
       <Drawer.Item
         style={{ backgroundColor: '#64ffda' }}
-        icon="star"
-        label="First Item"
-        onPress={() => console.log('trocous')}
+        icon="leaf"
+        label="Home Preenchido"
+        onPress={() => navigation.navigate('TODAS as suas Plantas')}
       />
-      <Drawer.Item icon="star" label="First Item" />
-      <Drawer.Item icon="star" label="First Item" />
       <TouchableRipple onPress={toggleTheme}>
         <View style={[styles.preference]}>
           <Text variant="labelLarge">Dark Theme</Text>
