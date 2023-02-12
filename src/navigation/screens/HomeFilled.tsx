@@ -5,81 +5,92 @@ import { Text, FAB, List, Avatar, Divider } from 'react-native-paper';
 import ScreenWrapper from '../../components/ScreenWrapper';
 
 export default function Home({ navigation }) {
-  return (
-    <ScreenWrapper>
-      <List.Item
-        title="Headline"
-        onPress={() => navigation.navigate('Plant')}
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
+  const [visible, setVisible] = React.useState<boolean>(false);
 
-      <List.Item
-        title="Headline"
-        description="Supporting text that is long enough to fill up multiple lines in the item"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+  return (
+    <>
+      <ScreenWrapper>
+        <List.Item
+          title="Headline"
+          onPress={() => navigation.navigate('Plant')}
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+
+        <List.Item
+          title="Headline"
+          description="Supporting text that is long enough to fill up multiple lines in the item"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <Divider />
+        <List.Item
+          title="Headline"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <List.Item
+          title="Headline"
+          description="Supporting text that is long enough to fill up multiple lines in the item"
+          left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
+        />
+        <Divider />
+      </ScreenWrapper>
+      <FAB
+        icon="plus"
+        label={visible ? 'Adicione uma planta' : ''}
+        style={styles.fab}
+        onPress={() => navigation.navigate('Identifique sua planta')}
+        onLongPress={() => setVisible(!visible)}
       />
-      <Divider />
-      <List.Item
-        title="Headline"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <List.Item
-        title="Headline"
-        description="Supporting text that is long enough to fill up multiple lines in the item"
-        left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
-      />
-      <Divider />
-    </ScreenWrapper>
+    </>
   );
 }
 
@@ -99,5 +110,11 @@ const styles = StyleSheet.create({
   },
   fabStyle: {
     margin: 20,
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
   },
 });

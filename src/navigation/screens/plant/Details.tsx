@@ -1,38 +1,66 @@
 import React from 'react';
-import { SafeAreaView, View, StyleSheet } from 'react-native';
-import { Text, FAB } from 'react-native-paper';
+import { Text, Card } from 'react-native-paper';
+
+import ScreenWrapper from '../../../components/ScreenWrapper';
 
 export default function Details({ navigation }) {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.row}>
-        <FAB
-          icon="plus"
-          onPress={() => console.log('ta funcionando')}
-          visible
-          style={[styles.fabStyle]}
-        />
-        <Text variant="titleSmall">Details</Text>
-      </View>
-    </SafeAreaView>
+    <ScreenWrapper>
+      <Card
+        onPress={() => console.log('Adicione Imagens')}
+        style={{ marginVertical: 10, marginHorizontal: 20 }}>
+        <Card.Title title="Umidade do Solo" />
+        <Card.Content>
+          <Text>Algo</Text>
+        </Card.Content>
+        <Card.Actions>
+          <Text>40%</Text>
+        </Card.Actions>
+      </Card>
+      <Card
+        onPress={() => console.log('Adicione Imagens')}
+        style={{ marginVertical: 10, marginHorizontal: 20 }}>
+        <Card.Title title="Umidade do Ambiente" />
+        <Card.Content>
+          <Text>Algo</Text>
+        </Card.Content>
+        <Card.Actions>
+          <Text>40%</Text>
+        </Card.Actions>
+      </Card>
+      <Card
+        onPress={() => console.log('Adicione Imagens')}
+        style={{ marginVertical: 10, marginHorizontal: 20 }}>
+        <Card.Title title="Temperatura do Solo" />
+        <Card.Content>
+          <Text>Algo</Text>
+        </Card.Content>
+        <Card.Actions>
+          <Text>40%</Text>
+        </Card.Actions>
+      </Card>
+      <Card
+        onPress={() => console.log('Adicione Imagens')}
+        style={{ marginVertical: 10, marginHorizontal: 20 }}>
+        <Card.Title title="Temperatura do Ambiente" />
+        <Card.Content>
+          <Text>Algo</Text>
+        </Card.Content>
+        <Card.Actions>
+          <Text>40%</Text>
+        </Card.Actions>
+      </Card>
+      <Card
+        onPress={() => console.log('Adicione Imagens')}
+        style={{ marginVertical: 10, marginHorizontal: 20 }}>
+        <Card.Title title="Luminosidade" />
+        <Card.Content>
+          <Text>Algo</Text>
+        </Card.Content>
+        <Card.Actions>
+          <Text>40%</Text>
+        </Card.Actions>
+      </Card>
+    </ScreenWrapper>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    padding: 8,
-    justifyContent: 'center',
-  },
-  row: {
-    flex: 0.5,
-    marginBottom: 8,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-  },
-  fabStyle: {
-    margin: 20,
-  },
-});

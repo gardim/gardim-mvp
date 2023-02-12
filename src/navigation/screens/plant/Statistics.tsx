@@ -1,19 +1,29 @@
-import React from 'react';
-import { SafeAreaView, View, StyleSheet } from 'react-native';
+import filter from 'lodash/filter';
+import find from 'lodash/find';
+import groupBy from 'lodash/groupBy';
+import React, { Component } from 'react';
+import { SafeAreaView, View, StyleSheet, Alert } from 'react-native';
+import {
+  ExpandableCalendar,
+  TimelineEventProps,
+  TimelineList,
+  CalendarProvider,
+  TimelineProps,
+  CalendarUtils,
+} from 'react-native-calendars';
 import { Text, FAB } from 'react-native-paper';
 
 export default function Statistics({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.row}>
-        <FAB
-          icon="plus"
-          onPress={() => console.log('ta funcionando')}
-          visible
-          style={[styles.fabStyle]}
-        />
-        <Text variant="titleSmall">Statistics</Text>
-      </View>
+      <CalendarProvider
+        date="2023-02-13"
+        showTodayButton
+        disabledOpacity={0.6}
+        // numberOfDays={3}
+      >
+        <ExpandableCalendar firstDay={1} />
+      </CalendarProvider>
     </SafeAreaView>
   );
 }

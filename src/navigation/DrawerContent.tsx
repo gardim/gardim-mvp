@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Drawer, Switch, Text, TouchableRipple } from 'react-native-paper';
+import { Drawer, Switch, Text, TouchableRipple, useTheme } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { PreferencesContext } from '../configuration/PreferencesContext';
@@ -9,11 +9,17 @@ export default function DrawerContent({ navigation }) {
   const insets = useSafeAreaInsets();
 
   const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
+  const theme = useTheme();
 
   return (
-    <Drawer.Section title="Preferences" style={{ flex: 1, paddingTop: insets.top + 4 }}>
+    <Drawer.Section
+      title="Preferences"
+      style={{
+        flex: 1,
+        paddingTop: insets.top + 4,
+        backgroundColor: theme.colors.background,
+      }}>
       <Drawer.Item
-        style={{ backgroundColor: '#64ffda' }}
         icon="leaf"
         label="Home Preenchido"
         onPress={() => navigation.navigate('TODAS as suas Plantas')}
