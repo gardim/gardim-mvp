@@ -7,18 +7,12 @@ export default function ImageIdentification({ navigation }) {
   const [image, setImage] = useState(null);
 
   const pickImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
+    const result = await ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       quality: 1,
       selectionLimit: 5,
     });
-
-    console.log(result);
-
-    if (!result.canceled) {
-      setImage(result.assets[0].uri);
-    }
   };
   return (
     <SafeAreaView style={styles.container}>

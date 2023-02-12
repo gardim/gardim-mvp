@@ -9,7 +9,7 @@ export default function Home({ navigation }) {
     <ScreenWrapper>
       <List.Item
         title="Headline"
-        onPress={() => console.log('faz nada')}
+        onPress={() => navigation.navigate('Plant')}
         left={(props) => <Avatar.Text style={props.style} label="A" size={40} />}
       />
       <List.Item
