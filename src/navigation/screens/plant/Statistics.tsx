@@ -10,20 +10,38 @@ import {
   CalendarProvider,
   TimelineProps,
   CalendarUtils,
+  Calendar,
+  CalendarList,
 } from 'react-native-calendars';
-import { Text, FAB } from 'react-native-paper';
+import { useTheme, Text, FAB } from 'react-native-paper';
 
 export default function Statistics({ navigation }) {
+  const theme = useTheme();
+
+  React.useEffect(() => {}, [theme.colors.background]);
+
   return (
     <SafeAreaView style={styles.container}>
-      <CalendarProvider
-        date="2023-02-13"
-        showTodayButton
-        disabledOpacity={0.6}
-        // numberOfDays={3}
-      >
-        <ExpandableCalendar firstDay={1} />
-      </CalendarProvider>
+      <CalendarList
+        firstDay={1}
+        pastScrollRange={1}
+        futureScrollRange={1}
+        scrollEnabled
+        showScrollIndicator={false}
+        theme={{
+          backgroundColor: theme.colors.background, // Not change nothing
+          calendarBackground: theme.colors.background, // If change it, change all calendar bg
+          textSectionTitleColor: theme.colors.onBackground,
+          selectedDayBackgroundColor: 'transparent',
+          selectedDayTextColor: theme.colors.onBackground,
+          todayTextColor: theme.colors.onBackground,
+          todayBackgroundColor: theme.colors.primary,
+          dayTextColor: 'gray', //Disabled days
+          dotColor: theme.colors.primary,
+          selectedDotColor: theme.colors.onBackground,
+          monthTextColor: theme.colors.onBackground,
+        }}
+      />
     </SafeAreaView>
   );
 }
